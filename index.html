@@ -7,23 +7,24 @@
   <title>Scoped CSS Variables and JS</title>
 </head>
 <body>
-  <main>
-    <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
-  
-    <div class="controls">
-      <label for="spacing">Spacing:</label>
-      <input id="spacing" type="range" name="spacing" min="10" max="30" value="10" data-sizing="px">
-  
-      <label for="blur">Blur:</label>
-      <input id="blur" type="range" name="blur" min="0" max="10" value="10" data-sizing="px">
-  
-      <label for="base">Base Color</label>
-      <input id="base" type="color" name="base" value="#ffc600">
-    </div>
-  
-    <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
-  </main>
-
+  <div class="container">
+    <main>
+      <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
+    
+      <div class="controls">
+        <label for="spacing">Spacing:</label>
+        <input id="spacing" type="range" name="spacing" min="10" max="30" value="10" data-sizing="px">
+    
+        <label for="blur">Blur:</label>
+        <input id="blur" type="range" name="blur" min="0" max="10" value="10" data-sizing="px">
+    
+        <label for="base">Base Color</label>
+        <input id="base" type="color" name="base" value="#ffc600">
+      </div>
+    
+      <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+    </main>
+  </div>
   <footer><a href="https://github.com/gilbertorascon/CSS_Variables"><i class="fab fa-github"></i></a></footer>
 
   <style>
@@ -34,26 +35,12 @@
      --blur: 5px;
     }
 
-    html {
-      position:relative; 
-      min-height: 100%;
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
     }
-    img{
-      padding: var(--spacing);
-      background: var(--base);
-      filter: blur(var(--blur));
-      max-width: 40%;
-    }
-
-    .hl{
-      color: var(--base);
-    }
-    h2 {
-      margin: 0px;
-      padding: 10px;
-    }
+    
     body {
       text-align: center;
       background: #193549;
@@ -61,18 +48,32 @@
       font-family: 'helvetica neue', sans-serif;
       font-weight: 100;
       font-size: 30px;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
     }
 
-    .controls {
-      margin-bottom: 25px;
+    h2 {
+      margin: 0px;
+      padding: 10px;
     }
+
+    img{
+      padding: var(--spacing);
+      background: var(--base);
+      filter: blur(var(--blur));
+      max-width: 40%;
+    }
+
 
     input {
       width: 100px;
       margin-bottom: 10px;
+    }
+
+    .hl{
+      color: var(--base);
+    }
+
+    .controls {
+      margin-bottom: 25px;
     }
 
     footer {
@@ -96,7 +97,7 @@
         font-size: 20px;
       }
       img{
-        max-width: 72%;
+        max-width: 80%;
       }
     }
   </style>
